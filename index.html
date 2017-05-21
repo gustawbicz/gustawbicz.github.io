@@ -1,18 +1,28 @@
 <p style="line-height: 18px; font-size: 18px;  font-family: times;">
 Math with JavaScript:<br>
 Calculation of fractions<br>
+<p>
+<input type="number" id="nominator" value="1">
+<input type="number" id="denominator" value="2">
+<p>Click the button to cut fraction</p>
+
+<button onclick="cutFraction()">cutFraction</button>
+
 <script>
 
 function print(s) {
   document.writeln(s);
 }
-
-var m = 10
-var l = 6
+function getValue(s) {
+  return document.getElementById(s).value;
+}
+function cutFraction() {
+var m = getValue("nominator")
+var l = getValue("denominator")
 var r = m % l
 var rpok = ""
 if (r != 0) rpok = (m % l) + "/" +l 
 print(Math.floor(m / l) + " " + rpok )
-
+}
 </script>
-</p>
+
